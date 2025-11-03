@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Payment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="wifi-icon">📶</div>
+            <h1>WiFi Access Plans</h1>
+            <p class="subtitle">Choose your internet package and pay via M-Pesa</p>
+        </div>
+
+        <div class="plans-grid">
+            <!-- 1 Hour Plan -->
+            <div class="plan-card">
+                <div class="plan-duration">1 Hour</div>
+                <div class="plan-price">KSh 50</div>
+                <ul class="plan-features">
+                    <li>High Speed Internet</li>
+                    <li>Instant Activation</li>
+                    <li>Perfect for Quick Tasks</li>
+                </ul>
+                <button class="select-btn" onclick="selectPlan('1 Hour', 50)">Select Plan</button>
+            </div>
+
+            <!-- 3 Hours Plan -->
+            <div class="plan-card">
+                <div class="plan-duration">3 Hours</div>
+                <div class="plan-price">KSh 100</div>
+                <ul class="plan-features">
+                    <li>High Speed Internet</li>
+                    <li>Instant Activation</li>
+                    <li>Great for Browsing</li>
+                </ul>
+                <button class="select-btn" onclick="selectPlan('3 Hours', 100)">Select Plan</button>
+            </div>
+
+            <!-- 6 Hours Plan -->
+            <div class="plan-card popular">
+                <div class="badge">Popular</div>
+                <div class="plan-duration">6 Hours</div>
+                <div class="plan-price">KSh 150</div>
+                <ul class="plan-features">
+                    <li>High Speed Internet</li>
+                    <li>Instant Activation</li>
+                    <li>Best Value for Work</li>
+                </ul>
+                <button class="select-btn" onclick="selectPlan('6 Hours', 150)">Select Plan</button>
+            </div>
+
+            <!-- 12 Hours Plan -->
+            <div class="plan-card">
+                <div class="plan-duration">12 Hours</div>
+                <div class="plan-price">KSh 250</div>
+                <ul class="plan-features">
+                    <li>High Speed Internet</li>
+                    <li>Instant Activation</li>
+                    <li>Perfect for All Day</li>
+                </ul>
+                <button class="select-btn" onclick="selectPlan('12 Hours', 250)">Select Plan</button>
+            </div>
+
+            <!-- 24 Hours Plan -->
+            <div class="plan-card">
+                <div class="plan-duration">24 Hours</div>
+                <div class="plan-price">KSh 400</div>
+                <ul class="plan-features">
+                    <li>High Speed Internet</li>
+                    <li>Instant Activation</li>
+                    <li>Full Day Access</li>
+                </ul>
+                <button class="select-btn" onclick="selectPlan('24 Hours', 400)">Select Plan</button>
+            </div>
+
+            <!-- 1 Week Plan -->
+            <div class="plan-card">
+                <div class="plan-duration">1 Week</div>
+                <div class="plan-price">KSh 2,000</div>
+                <ul class="plan-features">
+                    <li>High Speed Internet</li>
+                    <li>Instant Activation</li>
+                    <li>Ultimate Value</li>
+                </ul>
+                <button class="select-btn" onclick="selectPlan('1 Week', 2000)">Select Plan</button>
+            </div>
+        </div>
+
+        <!-- Payment Modal -->
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Complete Payment</h2>
+                <div class="payment-details">
+                    <p><strong>Selected Plan:</strong> <span id="selectedPlan"></span></p>
+                    <p><strong>Amount:</strong> KSh <span id="selectedAmount"></span></p>
+                </div>
+                <form id="paymentForm">
+                    <div class="form-group">
+                        <label for="phoneNumber">M-Pesa Phone Number</label>
+                        <input type="tel" id="phoneNumber" placeholder="254XXXXXXXXX" required>
+                    </div>
+                    <button type="submit" class="pay-btn">Pay with M-Pesa</button>
+                </form>
+                <div id="paymentStatus" class="payment-status"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
